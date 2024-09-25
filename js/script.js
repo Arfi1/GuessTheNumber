@@ -1,12 +1,25 @@
 console.log("Jeg er i guessnumber")
 
 const lblMessage = document.querySelector(".message");
+console.log(lblMessage);
+
 const lblNumber = document.querySelector(".number");
+console.log(lblNumber)
+
 const lblScore = document.querySelector(".score");
+console.log(lblScore)
+
 const lblHighScore = document.querySelector(".highscore");
+console.log(lblHighScore)
+
 const inpGuess = document.querySelector(".guess");
+console.log(inpGuess)
+
 const btnCheck = document.querySelector(".check");
+console.log(btnCheck)
+
 const btnAgain = document.querySelector(".again");
+console.log(btnAgain)
 
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -26,13 +39,14 @@ btnCheck.addEventListener("click", function () {
    } else if (guess === secretNumber) {
        displayMessage("WUHUUU YOU GUESSED THE NUMBER \u{1F973}!!!.... Now try again \u{1F601}");
        lblNumber.textContent = secretNumber;
+       document.body.style.backgroundImage = "url('https://media.giphy.com/media/pa37AAGzKXoek/giphy.gif')";
+
 
        if (score > highscore) {
            highscore = score;
            lblHighScore.textContent = highscore;
        }
 
-       document.body.style.backgroundImage = "url('https://media.giphy.com/media/pa37AAGzKXoek/giphy.gif')";
        document.body.style.backgroundRepeat = "no-repeat";
        document.body.style.backgroundSize = "cover";
        document.body.style.backgroundPosition = "center";
@@ -44,9 +58,15 @@ btnCheck.addEventListener("click", function () {
            score--;
            lblScore.textContent = score;
        }  else {
-           displayMessage("Game over!")
+           displayMessage("Game over!.... Try Again")
            lblScore.textContent = 0;
+           document.body.style.backgroundImage = "url('https://media.giphy.com/media/eJ4j2VnYOZU8qJU3Py/giphy.gif')";
+           document.body.style.backgroundRepeat = "no-repeat";
+           document.body.style.backgroundSize = "cover";
+           document.body.style.backgroundPosition = "center";
+
        }
+
    }
 });
 
